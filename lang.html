@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <link rel="stylesheet" href="/style/general-style.css">
+    <link rel="stylesheet" href="style-index.css">
+    <link rel="stylesheet" href="/style/style-home_portfolio.css">
+    <script src="/script.js"></script>
+    <script src="https://kit.fontawesome.com/25c9fb1e35.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Portfolio">
+    <meta name="keywords"
+        content="Graphic Design, Emotes, Illustrations, Grafica, Art, Brand Design, Brand Identity, Web Design">
+    <meta name="author" content="Davide Calabrò">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- HEAD -->
+    <title>Davide Calabrò ~ Language</title>
+    <link rel="icon" href="/img/logo/Logo-DC_black.svg" type="image/x-icon">
+</head>
+
+<body>
+    <main class="index_lang">
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+
+        <section>
+            <div id="slider">
+                <div class="span" id="sliderValue"></div>
+            </div>
+            <div class="encaser_flag">
+                <a href="IT/portfolio.html"><img class="it" src="/img/flag-it.svg"></a>
+                <a href="EN/portfolio.html"><img class="en" src="/img/flag-en.svg"></a>
+            </div>
+        </section>
+        <img class="lang_logo" src="img/logo/Logo-DC_black.svg">
+    </main>
+</body>
+
+<!-- Script -->
+<script>
+    var sliderCounter = 0;
+    var sliderContent = [
+        "Imposta la lingua",
+        "Set the language"
+    ];
+    var slider = document.querySelector("#slider");
+    var sliderValue = document.querySelector("#sliderValue");
+
+    function slide() {
+        if (sliderCounter >= sliderContent.length) {
+            sliderCounter = 0;
+        }
+
+        sliderValue.innerHTML = "";
+
+        sliderValue.classList.remove("holder-animation");
+        void sliderValue.offsetWidth;
+        sliderValue.classList.add("holder-animation");
+
+        for (i = 0; i < sliderContent[sliderCounter].length; i++) {
+            let letterDiv = document.createElement("div");
+            letterDiv.innerHTML = sliderContent[sliderCounter][i];
+
+            if (letterDiv.innerHTML == " ") {
+                letterDiv.innerHTML = "&nbsp;";
+            }
+            letterDiv.classList.add("start");
+            letterDiv.classList.add("animation");
+            letterDiv.style.animationDelay = i / 10 + "s";
+            sliderValue.appendChild(letterDiv);
+        }
+
+        sliderCounter++;
+    }
+
+    slide();
+    setInterval(slide, 5000);
+</script>
+
+</html>

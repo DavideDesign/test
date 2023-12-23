@@ -1,0 +1,158 @@
+/* LOGO */
+#logo_index {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    -webkit-animation-name: logo;
+    -webkit-animation-duration: 1.5s;
+}
+
+@keyframes logo {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+
+/* LINGUE */
+.index_lang {
+    -webkit-animation-name: anim_lingue;
+    -webkit-animation-duration: 2s;
+    width: 100%;
+}
+
+@keyframes anim_lingue {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+.index_lang>section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#slider {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+#sliderValue {
+    display: flex;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.start {
+    opacity: 0;
+}
+
+.animation {
+    animation: fade .3s forwards;
+}
+
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.holder-animation {
+    animation: holder 5s;
+}
+
+@keyframes holder {
+    0% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+.encaser_flag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.it,
+.en {
+    width: 200px;
+    border-radius: 6px;
+    cursor: url("/img/pointer.png"), auto;
+}
+
+
+.lang_logo {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    opacity: 0.03;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE */
+@media (max-width:800px) {
+    #logo_index {
+        width: 65%;
+    }
+
+    #sliderValue {
+        font-size: 20px;
+    }
+
+    .it,
+    .en {
+        width: 130px;
+        border-radius: 3px;
+    }
+
+    .lang_logo {
+        width: 100%;
+    }
+}
